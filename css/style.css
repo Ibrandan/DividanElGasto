@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.lead {
+  font-size: 1.4rem;
+}
+
+input {
+  font-size: 1.2rem;
+}
