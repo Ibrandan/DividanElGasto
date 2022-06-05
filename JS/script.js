@@ -1,18 +1,36 @@
 // app de gastos
-let total = 0 ;
+
+var formatter = new Intl.NumberFormat('es-AR', {
+    style: 'currency',
+    currency: 'ARS',
+  });
+
+let cont = 0;
+let suma = 0;
+let cut = 0;
 
 function calcular() {
-    let nombre = $("#lbl-nombre").val();
-    let monto = $('#lbl-monto').val();
-    let resultado = nombre.split();
-    let resultadoMonto = monto.split();
-    for (let i=0; i <resultado.length; i++) {
-        let textoAMostrar = `<h5> ${resultado[i]}: $${resultadoMonto[i]}</h5>`;
-        $("#resultado").append(textoAMostrar);
-    }
+    let nombre = $("#nombre").val();
+    let monto = $('#monto').val();
+    cont += 1;
+
+    calcularTotal(nombre, monto, cont);
+    let mostrarNombre= `<h5> ${nombre}:</h5>`;
+    let mostrarMonto= `<h5>  ${formatter.format(monto)} </h5>`;
+
+    $("#resultadoNombre").append(mostrarNombre);
+    $("#resultadoMonto").append(mostrarMonto);
+}
+
+function calcularTotal(person, spent, c){
+    suma += parseInt(spent);
+    $("#sumaTotal").text(formatter.format(suma));
+
+    cut = suma / c;
+    $("#cut").text(formatter.format(Math.round(cut)));
 }
     
-$("#lbl-monto").keypress(function(event){
+$("#monto").keypress(function(event){
     if (event.which == 13) {
         calcular()
     }
