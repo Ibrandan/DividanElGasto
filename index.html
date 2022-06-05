@@ -27,36 +27,45 @@
       </p>
     </div>
     <div class="container-md">
-      <br>
       <form>
         <div class="form-group">
-          <label class="lead text-info" for="lbl-nombre">Nombre</label>
-          <input type="text" class="form-control border border-info py-4" id="lbl-nombre" />
+          <label class="lead text-info" for="nombre">Nombre:</label>
+          <input type="text" class="form-control border-info py-4" id="nombre" />
         </div>
         <div class="form-group">
           <br>
-          <label class="lead text-info" for="lbl-monto">Monto</label>
+          <label class="lead text-info" for="monto">Monto:</label>
           <input
             type="number"
-            class="form-control py-4 border border-info"
-            id="lbl-monto"
+            class="form-control py-4 border-info"
+            id="monto"
             min="0"
           />
         </div>
         <div class="text-center mt-5">
           <a
-            class="btn btn-light text-info border-info btn-lg px-5" 
+            class="btn btn-light text-info border-info btn-lg px-5 " 
             href="#"
             onclick="calcular()"
             >Agregar</a
           >
         </div>
       </form>
-      <div id="resultado" class="my-5">
+      <div>
+        <div  class="div-flex my-4">
+          <div id="resultadoNombre" class="mr-4"></div>
+          <div id="resultadoMonto"></div>
+        </div>
       </div>
-      <div class="alert alert-info h5 mb-4" id="sumaTotal" role="alert">Total:</div>
-      <div class="alert alert-info h5" id="" role="alert">
-        A cada uno le toca pagar:
+      <div class="div-flex alert alert-info mb-4">
+        <div class="mr-4 " >Total:</div>
+        <div id="sumaTotal"></div>
+      </div>
+      <div class="div-flex alert alert-info">
+        <div class="mr-4">
+          Por persona:
+        </div>
+        <div id="cut"></div>
       </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

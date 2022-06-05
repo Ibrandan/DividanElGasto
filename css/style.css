@@ -9,6 +9,16 @@
   font-size: 1.4rem;
 }
 
-input {
-  font-size: 1.2rem;
+.form-control {
+  font-size: 1.3rem;
+}
+
+.alert {
+  font-size: 1.3rem;
+}
+
+.div-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
