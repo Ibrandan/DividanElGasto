@@ -5,6 +5,8 @@ var formatter = new Intl.NumberFormat('es-AR', {
     currency: 'ARS',
   });
 
+const form = document.getElementById("form");
+
 let cont = 0;
 let suma = 0;
 let cut = 0;
@@ -20,6 +22,8 @@ function calcular() {
 
     $("#resultadoNombre").append(mostrarNombre);
     $("#resultadoMonto").append(mostrarMonto);
+
+    form.reset();
 }
 
 function calcularTotal(person, spent, c){
@@ -29,7 +33,7 @@ function calcularTotal(person, spent, c){
     cut = suma / c;
     $("#cut").text(formatter.format(Math.round(cut)));
 }
-    
+
 $("#monto").keypress(function(event){
     if (event.which == 13) {
         calcular()
